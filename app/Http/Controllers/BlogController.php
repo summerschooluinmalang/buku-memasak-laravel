@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
+use App\Category;
+use Validator;
 
 class BlogController extends Controller
 {
@@ -28,7 +30,8 @@ class BlogController extends Controller
     public function create()
     {
         //
-        return view("blog.create");
+        $categories = Category::get();
+        return view("blog.create", compact('categories'));
     }
 
     /**
@@ -73,7 +76,8 @@ class BlogController extends Controller
     {
         //
         $article = Blog::findOrfail($id);
-        return view("blog.edit", compact('article'));
+        $categories = Category::get();
+        return view("blog.edit", compact('article', 'categories'));
     }
 
     /**

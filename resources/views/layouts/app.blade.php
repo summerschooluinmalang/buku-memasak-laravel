@@ -52,6 +52,13 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+
+                                    <li>
+                                        <a href="{{ route('blog.create') }}">Post Article</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('blog.index') }}">List Articles</a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
